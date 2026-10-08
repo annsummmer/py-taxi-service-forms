@@ -3,9 +3,10 @@
 {% block content %}
   <h1>Delete Manufacturer</h1>
   <p>Are you sure you want to delete the manufacturer: {{ manufacturer }}?</p>
-  <p><i>All books associated with this manufacturer will also be deleted?</i></p>
+  <p><i>All cars associated with this manufacturer will also be deleted?</i></p>
   <form action="" method="post">
   {% csrf_token %}
-    <input type="submit" value="Yes, delete" class="btn badge-danger">
+    <input type="submit" value="Yes, delete" class="btn btn-danger">
+    <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-info">No, cancel</a>
   </form>
 {% endblock %}

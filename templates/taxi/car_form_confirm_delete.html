@@ -5,6 +5,7 @@
   <p>Are you sure you want to delete the Car: {{ car }}?</p>
   <form action="" method="post">
   {% csrf_token %}
-    <input type="submit" value="Yes, delete" class="btn badge-danger">
+    <input type="submit" value="Yes, delete" class="btn btn-danger">
+    <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-info">No, cancel</a>
   </form>
 {% endblock %}
